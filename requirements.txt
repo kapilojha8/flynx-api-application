@@ -1,0 +1,15 @@
+Cython==0.29.21
+Flask==2.2.2
+flask_login==0.5.0
+jinja2
+numpy==1.23.1
+Pillow==9.0.1
+pandas
+matplotlib==3.7.1
+joblib==1.2.0
+
+
+mysql
+sklearn
+pickle  
+json 

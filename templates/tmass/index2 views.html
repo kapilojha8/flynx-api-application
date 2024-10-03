@@ -1,0 +1,44 @@
+{% extends "ComponentPages/pageWrapper.html" %}
+
+{% block jsTablueLink %}
+    <script type='module' src="{{tablue_server_js}}"></script>
+{% endblock %}
+
+{% block content %}
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="bg-white">
+              <tableau-viz id="tableauViz" 
+                src="{{tableau_server_url}}/t/{{contentUrl}}/views/AverageCostofRepairsPerformedinaYear/AverageCostofRepairsPerformedinaYear" 
+                token="{{Tokens[0]}}" 
+                device="default"
+                toolbar="hidden"
+                hide-tabs
+                height="500px"
+                width="90%"
+                >
+              </tableau-viz>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-white">
+              <tableau-viz id="tableauViz" 
+                src="{{tableau_server_url}}/t/{{contentUrl}}/views/MarketShareofG-44Manufacturer/MarketShareofG-44Manufacturer"
+                token="{{Tokens[0]}}" 
+                device="default"
+                toolbar="hidden"
+                hide-tabs
+                height="500px"
+                width="90%"
+                >
+              </tableau-viz>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+    {% endblock %}

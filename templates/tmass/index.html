@@ -1,0 +1,82 @@
+{% extends "ComponentPages/pageWrapper.html" %}
+
+{% block jsTablueLink %}
+    <script type='module' src="{{tablue_server_js}}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row main-table">
+      <div class="col-md-12">
+        <table class="table text-nowrap mb-0 align-middle">
+          <thead class="text-dark fs-4 mb-2" > 
+              <tr>
+                  <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Months </h6></th>
+                  <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Replacable </h6></th>
+                  <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Non-Replacable </h6></th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for item in results_of_n_months %}
+                  {% for key, value in item.items() %}
+                      <tr class="border-bottom-0">
+                          <td><h6 class="fw-semibold mb-1">{{ key }} </h6></td>
+                          <td><h6 class="fw-semibold mb-1">{{ value['replacable'] }} </h6></td>
+                          <td><h6 class="fw-semibold mb-1">{{ value['non_replacable'] }} </h6></td>
+                      </tr>
+                  {% endfor %}
+              {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="bg-white">
+          <tableau-viz id="tableauViz" 
+            src="{{tableau_server_url}}/t/{{contentUrl}}/views/AverageCostofRepairsPerformedinaYear/AverageCostofRepairsPerformedinaYear" 
+            token="{{Tokens[0]}}" 
+            device="default"
+            toolbar="hidden"
+            hide-tabs
+            height="500px"
+            width="90%"
+            >
+          </tableau-viz>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="bg-white">
+          <tableau-viz id="tableauViz" 
+            src="{{tableau_server_url}}/t/{{contentUrl}}/views/MarketShareofG-44Manufacturer/MarketShareofG-44Manufacturer"
+            token="{{Tokens[0]}}" 
+            device="default"
+            toolbar="hidden"
+            hide-tabs
+            height="500px"
+            width="90%"
+            >
+          </tableau-viz>
+        </div>
+      </div>
+    </div>
+    <div class="row pb-3">
+      <div class="col-md-12">
+        <tableau-viz id="tableauViz"
+          src="{{tableau_server_url}}/t/{{contentUrl}}/views/AveragenumberofRepairsPerformedinaYear/AverageofRepairsPerformedinaYear" 
+          token="{{Tokens[0]}}" 
+          device="default"
+          toolbar="hidden"
+          hide-tabs>
+        </tableau-viz>
+      </div>
+    </div>
+
+    </div>
+
+  
+  </div>
+ 
+
+
+  {% endblock %}

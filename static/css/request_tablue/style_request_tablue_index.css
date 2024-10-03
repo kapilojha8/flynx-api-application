@@ -1,0 +1,24 @@
+.fix-height-width{
+    height: 251px;
+    width: auto;
+}
+
+.dashboard-select-card{
+    min-height: 420px;
+}
+
+@media (min-width:1200px) {
+    .btn.btn-primary.mt-3.mb-5 {
+        margin-left: 24.5vw;
+      }
+}
+
+@media (max-width:600px) {
+    .fix-height-width {
+      height: 151px;
+      width: auto;
+    }
+    .dashboard-select-card{
+        min-height: 300px ;
+    }
+    }

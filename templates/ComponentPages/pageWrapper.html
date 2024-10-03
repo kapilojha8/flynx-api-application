@@ -1,0 +1,130 @@
+ <!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {% block title %}MR MT{% endblock %} </title>
+  <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
+    {% block jsTablueLink %}
+    
+    {% endblock %} 
+  <link href="{{ url_for('static', filename='css/styles.min.css') }}" rel="stylesheet" type="text/css">
+
+  {% block CSS_JS %}
+    
+  {% endblock %} 
+</head>
+
+<body>
+
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="container-fluid">
+      <div class="row bg-dark">
+        <!--  Header Start -->
+        <header class="app-header border">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="/" class="text-nowrap logo-img">
+                        <div class="d-flex">
+                            <img src="{{ url_for('static', filename='images/TMaSSLogo.png') }}" width="50" alt="" />
+                            <img src="{{ url_for('static', filename='images/TMaSSLogo 1.png') }}" width="110" alt=""
+                                class="logo-2" />
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                    <ul class="navbar-nav d-flex ms-auto align-items-center justify-content-end m-0 p-0">
+                        <!-- <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" aria-expanded="false">
+                                <img src="{{ url_for('static', filename='images/user-1.jpg') }}" alt="" width="35" height="35"
+                                    class="rounded-circle">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <h5 class="fs-4 text-white m-0">Wayne Peterson</h5>
+                            <p class="text-grey m-0">System Admin</p>
+                        </li>
+                        <!-- <li class="nav-item"><div class="pl-4 close-btn d-block cursor-pointer" style="padding-left: 25px;">
+                        <i class="ti ti-x fs-8"></i>
+                        </div></li> -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!--  Header End -->
+      </div>
+    </div>
+     <!-- Sidebar Start -->
+     <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+  
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <!-- <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+              <i class="ti ti-x fs-8"></i>
+            </div> -->
+            <ul id="sidebarnav">
+              <li class="nav-small-cap">
+                <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                <span class="hide-menu">Home</span>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="/" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" aria-expanded="false" href="/request_tablue">
+                  <span>
+                    <i class="ti ti-file-description"></i>
+                  </span>
+                  <span class="hide-menu">Library</span>
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="/" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-link"></i>
+                  </span>
+                  <span class="hide-menu">Safety</span>
+                </a>
+              </li>
+  
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="/twoviewsinone" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-link"></i>
+                  </span>
+                  <span class="hide-menu">System Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+        {% block content %}{% endblock %}     
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/sidebarmenu.js') }}"></script>
+</body>
+
+</html>

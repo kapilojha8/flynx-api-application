@@ -1,0 +1,39 @@
+{% extends "ComponentPages/pageWrapper.html" %}
+{% block CSS_JS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/request_tablue/style_request_tablue_index.css') }} ">
+{% endblock %}
+{% block content %}
+<div class="container-fluid ">
+  <div class="row pb-2">
+    <div class="col-lg-6 col-md-9 col-12">
+      <div>
+        <h1>Welcome Home</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-3 col-12">
+          <div class="ml-auto">
+              <a href="create-dashboard.html" class="btn btn-primary mt-3 mb-5"><i class="ti ti-plus"></i>Create Dashboard</a>
+          </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    {% for created_image in all_Created_images %}
+    <div class="col-lg-3 col-6">
+      <div class="card bg-white border rounded dashboard-select-card">
+        <img src="{{ url_for('static', filename=created_image['View Image']) }}" class="img-fluid rounded fix-height-width" alt="">
+        <div class="p-3 text-center">
+            <h4 class="fw-semibold">{{ created_image['View Title'] }}</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <div class="px-3">
+            <a href="" class="btn btn-primary mb-3"><i class="ti ti-check"></i>  Selected</a>
+            <a href="/DashBoard/{{ created_image['View Id'] }}" class="btn btn-primary mb-3"><i class="ti ti-check"></i>  View DashBoard</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

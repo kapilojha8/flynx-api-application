@@ -12,9 +12,12 @@ PASSWORD           =  'Park@1234'                                         #'Park
 
 PATH_TO_SAVE_TABLUE_CLOUD_IMAGES = "images/TablueImages"
 
-
 PKL_MODEL_RandomForest = "Model_RepeatedStratifiedKFold_RandomForest_process.pkl"
 PKL_MODEL_DecisionTreeClassifier = "Model_RepeatedStratifiedKFold_DecisionTreeClassifier_process.pkl"
 
-PKL_MODEL_MAAC_RandomForest = "GridSearchCV_Model process 2 MAAC.pkl"
 
+
+
+#PKL_MODEL_MAAC_RandomForest = "GridSearchCV_Model process 2 MAAC.pkl"
+PKL_MODEL_MAAC_RandomForest = "GridSearchCV_Model process 2 _Boosted_Data MAAC.pkl"
+JOBLIB_23_FEATURES_MODEL = "model.joblib"
